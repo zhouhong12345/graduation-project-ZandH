@@ -14,101 +14,84 @@ import {
   View,
   Text,
   StatusBar,
+  Image,
 } from 'react-native';
+import {Router,Scene, Tabs} from 'react-native-router-flux';
+import Home from './src/home/Home';
+import Talk from './src/talk/Talk';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+console.disableYellowBox=true;
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <Router
+      backAndroidHandler={() => {
+        if (Actions.currentScene == 'login') {
+          // console.log('11');
+          Actions.reset('login');
+          if (new Date().getTime() - now < 2000) {
+            BackHandler.exitApp();
+          } else {
+            ToastAndroid.show('确定要退出吗', 100);
+            now = new Date().getTime();
+            return true;
+          }
+        } else {
+          if (Actions.currentScene == 'home') {
+            // console.log('22');
+            if (new Date().getTime() - now < 2000) {
+              BackHandler.exitApp();
+            } else {
+              ToastAndroid.show('确定要退出吗', 100);
+              now = new Date().getTime();
+              return true;
+            }
+          } else {
+            Actions.pop();
+            return true;
+          }
+        }
+      }}
+    >
+      <Scene key="root">
+        <Tabs
+          key="tabbar"
+          showLabel={true}
+          tabBarStyle={{backgroundColor: "#e0e0e0"}}
+          activeBackgroundColor="white"
+          inactiveBackgroundColor="red"
+        >
+          <Scene 
+            key="home" 
+            hideNavBar
+            component={Home} 
+            title="首页"
+            // icon={
+            //   ({ focused }) => <Image
+            //     source={focused ? require('./assets/cq/cshou1.png') : require('./assets/cq/cshou.png')}
+            //     style={{ width: 25, height: 25 }}
+
+            //   />
+            // }
+          />
+        </Tabs>
+        <Tabs
+          key="讨论"
+          // 是否显示标签栏文字
+          showLabel={false}
+          tabBarStyle={{backgroundColor: "#e0e0e0"}}
+          activeBackgroundColor="white"
+          inactiveBackgroundColor="red"
+        >
+          <Scene key="talk" component={Talk} />
+        </Tabs>
+      </Scene>
+    </Router>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  
 });
 
 export default App;
