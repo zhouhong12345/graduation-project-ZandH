@@ -10,7 +10,7 @@ export default class Home extends Component {
         return (
             <View>
                 <View style={{width:'100%',height:pxToDp(500),backgroundColor:'red'}}>
-                   <Text>123</Text>
+
                 </View>
             </View>
         )
