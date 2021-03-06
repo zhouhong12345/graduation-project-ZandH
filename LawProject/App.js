@@ -15,6 +15,8 @@ import Talk from './src/talk/Talk';
 import User from './src/user/User';
 import Lawyer from './src/layer/Lawyer';
 import Dialog from './src/layer/Dialog';
+import Shezhi from './src/user/Shezhi';
+import Message from './src/user/Message';
 
 console.disableYellowBox = true;
 
@@ -174,11 +176,35 @@ const App = () => {
 									title="我的"
 								>
 
-									<Scene key='stdmine' title='个人中心' component={User}
+									<Scene key='mine' title='个人中心' component={User}
 										navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										renderLeftButton={
 										<View style={{ marginLeft: 15 * s }}><Icons 
 										// name="left" color="white" onPress={Actions.pop} 
+										/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+										<View></View>
+										}
+									/>
+									<Scene key='shezhi' title='设置' component={Shezhi}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										renderLeftButton={
+										<View style={{ marginLeft: 15 * s }}><Icons 
+										name="left" color="white" onPress={Actions.pop} 
+										/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+										<View></View>
+										}
+									/>
+									<Scene key='msg' title='个人信息' component={Message}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										renderLeftButton={
+										<View style={{ marginLeft: 15 * s }}><Icons 
+										name="left" color="white" onPress={Actions.pop} 
 										/></View>
 										}
 										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
