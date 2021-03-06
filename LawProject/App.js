@@ -14,6 +14,7 @@ import Home from './src/home/Home';
 import Talk from './src/talk/Talk';
 import User from './src/user/User';
 import Lawyer from './src/layer/Lawyer';
+import Dialog from './src/layer/Dialog';
 
 console.disableYellowBox = true;
 
@@ -57,9 +58,9 @@ const App = () => {
 							<Tabs
 								key='tabbar'
 								hideNavBar
-								activeTintColor="#CE0000"
+								activeTintColor="#fff"
 								inactiveTintColor="#707070"
-								tabBarStyle={{ backgroundColor: '#e0e0e0' }}
+								tabBarStyle={{ backgroundColor: '#CE0000' }}
 							>
 								{/* Home栏 */}
 								<Scene key='homePage'
@@ -67,7 +68,7 @@ const App = () => {
 									title='法宝'
 									icon={
 										({ focused }) => <Icon 
-                    						color={focused?'#CE0000':'#707070'} 
+                    						color={focused?'white':'#707070'} 
                     						name="home"
                         					size={30}
                     					/>
@@ -93,7 +94,7 @@ const App = () => {
 									title='探讨'
 									icon={
 									({ focused }) => <Icon
-										color={focused?'#CE0000':'#707070'} 
+										color={focused?'white':'#707070'} 
 										name="people"
 										size={30}
 									/>
@@ -119,24 +120,37 @@ const App = () => {
 									key='lvshiPage'
 									icon={
 									({ focused }) => <Icon 
-										color={focused?'#CE0000':'#707070'} 
+										color={focused?'white':'#707070'} 
 										name="body"
 										size={30}
 										/>
 									}
 									title="律师"
-									initial
 									renderLeftButton={
 										<View style={{ marginLeft: 15 * s }}><Icon name="left" onPress={Actions.pop} /></View>
 									}
 								>
-									<Scene key='zixun' 
+									<Scene key='fuwu' 
 										title='律师服务' 
 										component={Lawyer}
 										navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										renderLeftButton={
 										<View style={{ marginLeft: 15 * s }}><Icons 
 										// name="left" color="white" onPress={Actions.pop} 
+										/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white'  }}
+										renderRightButton={
+										<View></View>
+										}
+									></Scene>
+									<Scene key='dialog' 
+										title='律师对话' 
+										component={Dialog}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										renderLeftButton={
+										<View style={{ marginLeft: 15 * s }}><Icons 
+											name="left" color="white" onPress={Actions.pop} 
 										/></View>
 										}
 										titleStyle={{ flex: 1, textAlign: 'center', color: 'white'  }}
@@ -151,11 +165,12 @@ const App = () => {
 									key='userPage'
                   					icon={
 										({focused})=><Icon
-											color={focused?'#CE0000':'#909090'} 
+											color={focused?'white':'#909090'} 
 											name="person"
                       						size={30}
 										/>
                   					}
+									initial
 									title="我的"
 								>
 
@@ -193,7 +208,7 @@ const App = () => {
 									//hideNavBar
 									icon={
 										({focused})=><Icon 
-											color={focused?'#CE0000':'#707070'} 
+											color={focused?'white':'#707070'} 
 											name="home"
                       size={30}
 										/>
@@ -214,7 +229,7 @@ const App = () => {
 									key='userPage'
                   icon={
 										({focused})=><Icon 
-											color={focused?'#CE0000':'#909090'} 
+											color={focused?'white':'#909090'} 
 											name="user"
                       size={30}
 										/>
