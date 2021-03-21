@@ -5,19 +5,30 @@ import { Router, Overlay, Scene, Tabs, Drawer, Lightbox, Modal, Actions } from '
 // import { Icon } from '@ant-design/react-native';
 // import SplashScreen from 'react-native-splash-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Icons from 'react-native-vector-icons/AntDesign';
+import Icons from 'react-native-vector-icons/Ionicons';
+import NavBar from './src/NavBar/NavBar';
+
+
+
+//咨询
+import Comment from '../LawProject/src/Consult/Comment'
+import Release from '../LawProject/src/Consult/Release'//发布
+
 
 const { width, height } = Dimensions.get('window');
-const s = width/640;
+const s = width / 640;
+
+import pxToDp from './src/pxToDp';//等价上面两句
+
+
+
 
 import Home from './src/home/Home';
-import Talk from './src/talk/Talk';
+//import Talk from './src/talk/Talk';
+
+import Consult from './src/Consult/Consult'
 import User from './src/user/User';
 import Lawyer from './src/layer/Lawyer';
-import Dialog from './src/layer/Dialog';
-import Shezhi from './src/user/Shezhi';
-import Message from './src/user/Message';
-
 console.disableYellowBox = true;
 
 const App = () => {
@@ -60,60 +71,68 @@ const App = () => {
 							<Tabs
 								key='tabbar'
 								hideNavBar
-								activeTintColor="#fff"
+								activeTintColor="#CE0000"
 								inactiveTintColor="#707070"
-								tabBarStyle={{ backgroundColor: '#CE0000' }}
+								tabBarStyle={{ backgroundColor: '#e0e0e0' }}
 							>
 								{/* Home栏 */}
 								<Scene key='homePage'
-                				// hideNavBar
-									title='法宝'
+									// hideNavBar
+									title='案例'
 									icon={
-										({ focused }) => <Icon 
-                    						color={focused?'white':'#707070'} 
-                    						name="home"
-                        					size={30}
-                    					/>
+										({ focused }) => <Icon
+											color={focused ? '#CE0000' : '#707070'}
+											name="newspaper-sharp"
+											size={26}
+										/>
 									}
 								>
-									<Scene key='home' component={Home} 
-										navigationBarStyle={{ backgroundColor: '#CE0000' }}
-										renderLeftButton={
-										<View style={{ marginLeft: 15 * s }}><Icons
-										//  name="left" color="white" onPress={Actions.pop} 
-										/></View>
-										}
-										titleStyle={{ flex: 1, textAlign: 'center', color: 'white'  }}
-										renderRightButton={
-										<View></View>
-										}
-									/>
-								</Scene>
-
-								{/* 咨询 */}
-								<Scene 
-									key="zixunPage"
-									title='探讨'
-									icon={
-									({ focused }) => <Icon
-										color={focused?'white':'#707070'} 
-										name="people"
-										size={30}
-									/>
-									}
-								>
-									<Scene key="zixun" 
-										component={Talk}
-										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+									<Scene key='home' component={Home}
+										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='案例' />}
 										renderLeftButton={
 											<View style={{ marginLeft: 15 * s }}><Icons
 											//  name="left" color="white" onPress={Actions.pop} 
 											/></View>
 										}
-										titleStyle={{ flex: 1, textAlign: 'center', color: 'white'  }}
+										// titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
 										renderRightButton={
 											<View></View>
 										}
+									/>
+								</Scene>
+
+								{/* 咨询 */}
+								<Scene
+									key="zixunPage"
+									title='咨询'
+									icon={
+										({ focused }) => <Icon
+											color={focused ? '#CE0000' : '#707070'}
+											name="chatbubble-ellipses"
+											size={26}
+										/>
+									}
+								>
+									<Scene key="zixun"
+										component={Consult}
+										//navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='咨询' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											//  name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										//titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									/>
+									<Scene key="comment" hideTabBar component={Comment}
+
+									/>
+									<Scene key="release" hideTabBar component={Release}
+										navBar={() => <NavBar name='发布' />}
 									/>
 								</Scene>
 
@@ -121,10 +140,10 @@ const App = () => {
 								<Scene
 									key='lvshiPage'
 									icon={
-									({ focused }) => <Icon 
-										color={focused?'white':'#707070'} 
-										name="body"
-										size={30}
+										({ focused }) => <Icon
+											color={focused ? '#CE0000' : '#707070'}
+											name="people"
+											size={26}
 										/>
 									}
 									title="律师"
@@ -132,89 +151,48 @@ const App = () => {
 										<View style={{ marginLeft: 15 * s }}><Icon name="left" onPress={Actions.pop} /></View>
 									}
 								>
-									<Scene key='fuwu' 
-										title='律师服务' 
-										component={Lawyer}
-										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+									<Scene key='zixun' title='律师服务' component={Lawyer}
+										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='律师' />}
 										renderLeftButton={
-										<View style={{ marginLeft: 15 * s }}><Icons 
-										// name="left" color="white" onPress={Actions.pop} 
-										/></View>
+											<View style={{ marginLeft: 15 * s }}><Icons
+											// name="left" color="white" onPress={Actions.pop} 
+											/></View>
 										}
-										titleStyle={{ flex: 1, textAlign: 'center', color: 'white'  }}
+										//titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
 										renderRightButton={
-										<View></View>
+											<View></View>
 										}
 									></Scene>
-									<Scene key='dialog' 
-										title='律师对话' 
-										component={Dialog}
-										navigationBarStyle={{ backgroundColor: '#CE0000' }}
-										renderLeftButton={
-										<View style={{ marginLeft: 15 * s }}><Icons 
-											name="left" color="white" onPress={Actions.pop} 
-										/></View>
-										}
-										titleStyle={{ flex: 1, textAlign: 'center', color: 'white'  }}
-										renderRightButton={
-										<View></View>
-										}
-									></Scene>
-										
+
 								</Scene>
 								{/* 用户中心 */}
 								<Scene
 									key='userPage'
-                  					icon={
-										({focused})=><Icon
-											color={focused?'white':'#909090'} 
+									icon={
+										({ focused }) => <Icon
+											color={focused ? '#CE0000' : '#909090'}
 											name="person"
-                      						size={30}
+											size={26}
 										/>
-                  					}
-									initial
+									}
 									title="我的"
 								>
 
-									<Scene key='mine' title='个人中心' component={User}
-										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+									<Scene key='stdmine' title='个人中心' component={User}
+										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='个人中心' />}
 										renderLeftButton={
-										<View style={{ marginLeft: 15 * s }}><Icons 
-										// name="left" color="white" onPress={Actions.pop} 
-										/></View>
+											<View style={{ marginLeft: 15 * s }}><Icons
+											// name="left" color="white" onPress={Actions.pop} 
+											/></View>
 										}
-										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										//titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
 										renderRightButton={
-										<View></View>
+											<View></View>
 										}
 									/>
-									<Scene key='shezhi' title='设置' component={Shezhi}
-										navigationBarStyle={{ backgroundColor: '#CE0000' }}
-										renderLeftButton={
-										<View style={{ marginLeft: 15 * s }}><Icons 
-										name="left" color="white" onPress={Actions.pop} 
-										/></View>
-										}
-										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
-										renderRightButton={
-										<View></View>
-										}
-									/>
-									<Scene key='msg' title='个人信息' component={Message}
-										navigationBarStyle={{ backgroundColor: '#CE0000' }}
-										renderLeftButton={
-										<View style={{ marginLeft: 15 * s }}><Icons 
-										name="left" color="white" onPress={Actions.pop} 
-										/></View>
-										}
-										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
-										renderRightButton={
-										<View></View>
-										}
-									/>
-									
 								</Scene>
-
 							</Tabs>
 						</Scene>
 					</Lightbox>
@@ -233,10 +211,10 @@ const App = () => {
 									title='首页'
 									//hideNavBar
 									icon={
-										({focused})=><Icon 
-											color={focused?'white':'#707070'} 
+										({ focused }) => <Icon
+											color={focused ? '#CE0000' : '#707070'}
 											name="home"
-                      size={30}
+											size={30}
 										/>
 									}
 								>
@@ -248,23 +226,22 @@ const App = () => {
 											<View></View>
 										}
 										component={Home} />
-					
+
 								</Scene>
-                {/* 用户中心 */}
+								{/* 用户中心 */}
 								<Scene
 									key='userPage'
-                  icon={
-										({focused})=><Icon 
-											color={focused?'white':'#909090'} 
+									icon={
+										({ focused }) => <Icon
+											color={focused ? '#CE0000' : '#909090'}
 											name="user"
-                      size={30}
+											size={30}
 										/>
-                  }
+									}
 									title="我的"
 								>
+									<Scene key='stdmine' title='个人中心' component={User} />
 
-									<Scene key='stdmine' title='个人中心' component={User}/>
-									
 								</Scene>
 
 							</Tabs>
