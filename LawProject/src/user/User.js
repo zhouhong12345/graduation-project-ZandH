@@ -25,7 +25,7 @@ export default class User extends Component {
                             <Image style={{width:100*s,height:100*s}}  source={this.state.imageUrl}/>
                         </ImageBackground>
                     </View>
-                    <Text style={{width:150*s,height:40*s,fontSize:35*s,marginLeft:35*s,color:'#fff',fontWeight:'bold'}}>用户名{this.state.wusername}</Text>
+                    <Text style={{width:150*s,height:40*s,fontSize:35*s,marginLeft:35*s,color:'#fff',fontWeight:'bold'}}>流水{this.state.wusername}</Text>
                     <TouchableOpacity onPress={()=>Actions.shezhi()} style={{marginLeft:200*s}}>
                         <Icon name='setting' size={50} color='#fff'/>
                         <Text style={{marginLeft:12*s,color:'#fff',fontSize:24*s}}>设置</Text>
@@ -38,19 +38,31 @@ export default class User extends Component {
                     </View>
                     <View style={styles.wview}>
                         <Icon name='123' size={50} color='#CE0000' />
-                        <TouchableOpacity onPress={()=>Actions.wwodeshoucang()}><Text style={styles.context}>我曾提出的问题</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>Actions.ques()}><Text style={styles.context}>我曾提出的问题</Text></TouchableOpacity>
                     </View>
                     <View style={styles.wview}>
                         <Icon name='contacts' size={50} color='#CE0000' />
-                        <TouchableOpacity onPress={()=>Actions.wwodedingdan()}><Text style={styles.context}>咨询的律师</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>Actions.mylayor()}><Text style={styles.context}>咨询的律师</Text></TouchableOpacity>
+                    </View>
+                    <View style={styles.wview}>
+                        <Icon name='staro' size={50} color='#CE0000' />
+                        <TouchableOpacity onPress={()=>Actions.star()}><Text style={styles.context}>案例收藏</Text></TouchableOpacity>
+                    </View>
+                    <View style={styles.wview}>
+                        <Icon name='calculator' size={50} color='#CE0000' />
+                        <TouchableOpacity onPress={()=>Actions.money()}><Text style={styles.context}>我的钱包</Text></TouchableOpacity>
                     </View>
                     <View style={styles.wview}>
                         <Icon name='message1' size={50} color='#CE0000'/>
-                        <TouchableOpacity onPress={()=>Actions.wwodejiaoshi()}><Text style={styles.context}>消息通知</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>Actions.infor()}><Text style={styles.context}>消息通知</Text></TouchableOpacity>
+                    </View>
+                    <View style={styles.wview}>
+                        <Icon name='cloudupload' size={50} color='#CE0000'/>
+                        <TouchableOpacity onPress={()=>Actions.fankui()}><Text style={styles.context}>用户反馈</Text></TouchableOpacity>
                     </View>
                     <View style={styles.wview}>
                         <Icon name='logout' size={50} color='#CE0000'/>
-                        <TouchableOpacity onPress={()=>this.wexitapp()}><Text style={styles.context}>退出登录</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>this.exitapp()}><Text style={styles.context}>退出登录</Text></TouchableOpacity>
                     </View>
                 </View>
                 </ScrollView>
