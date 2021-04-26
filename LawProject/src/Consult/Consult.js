@@ -53,8 +53,7 @@ export default class Talk extends Component {
 
     render() {
         return (
-            <View style={{ height: height, backgroundColor: '#FFECEC' }}
-            >
+            <View style={{ height: height, backgroundColor: '#FFECEC' }}>
                 <View style={{ width: width }}>
                     <View style={{ flexDirection: 'row', alignItems: "center", paddingTop: pxToDp(10) }}>
                         <View style={{ width: pxToDp(400), marginRight: pxToDp(40), marginLeft: pxToDp(20), height: pxToDp(46), backgroundColor: "#EBD6D6", flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', borderRadius: pxToDp(25) }}>
@@ -80,10 +79,10 @@ export default class Talk extends Component {
                         </TouchableOpacity>
 
                         <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginLeft: pxToDp(370) }}>
-                            <ModalDropdown 
-                              options={select}
-                              dropdownStyle={{borderWidth:2}}
-                              textStyle={{fontSize:30}}
+                            <ModalDropdown
+                                options={select}
+                                dropdownStyle={{ borderWidth: 2 }}
+                                textStyle={{ fontSize: 30 }}
                             >
                                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                     <Text style={{ color: '#CE0000', fontSize: pxToDp(22), marginLeft: pxToDp(47) }}>分类</Text>
@@ -112,40 +111,39 @@ export default class Talk extends Component {
                     {/* <View> */}
                     {
                         this.state.isActive1 ?
-                            <View
-                                style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', paddingTop: pxToDp(20) }}
-
-                            >
-                                <View style={{ width: width - pxToDp(30), height: pxToDp(300), backgroundColor: 'white', borderRadius: pxToDp(15), marginBottom: pxToDp(20), padding: pxToDp(15) }}>
-                                    <View>
-                                        {/* 标题 */}
-                                        <Text style={{ fontSize: pxToDp(28), marginBottom: pxToDp(10) }}>离婚后孩子转户口怎么办理</Text>
+                            <View style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', paddingTop: pxToDp(20) }}>
+                                <TouchableOpacity onPress={Actions.cdetail}>
+                                    <View style={{ width: width - pxToDp(30), height: pxToDp(300), backgroundColor: 'white', borderRadius: pxToDp(15), marginBottom: pxToDp(20), padding: pxToDp(15) }}>
+                                        <View>
+                                            {/* 标题 */}
+                                            <Text style={{ fontSize: pxToDp(28), marginBottom: pxToDp(10) }}>离婚后孩子转户口怎么办理</Text>
+                                        </View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: pxToDp(10) }}>
+                                            {/* 头像 */}
+                                            <Image source={require('../img/touxiang.jpg')} style={{ width: pxToDp(35), height: pxToDp(35), borderRadius: pxToDp(30), marginRight: pxToDp(15) }} />
+                                            {/* 用户名 */}
+                                            <Text style={{ fontSize: pxToDp(18), color: '#5B5B5B' }}>爱嗦粉的臭臭</Text>
+                                            {/* 问题描述 */}
+                                        </View>
+                                        <View>
+                                            <Text style={{ fontSize: pxToDp(20), color: 'gray' }}>本人今年21,17年6月份与丈夫离婚，孩子跟我，现在大了要上幼儿园，请问户口应该怎么转？</Text>
+                                        </View>
+                                        <View style={{ height: pxToDp(30), flexDirection: "row", justifyContent: 'flex-end', alignItems: 'center', position: 'absolute', bottom: 10, right: 20 }}>
+                                            <TouchableOpacity onPress={Actions.comment}>
+                                                <Image source={require('../img/comment.png')} style={{ marginRight: pxToDp(10), width: pxToDp(32), height: pxToDp(28), marginRight: pxToDp(45) }} />
+                                            </TouchableOpacity>
+                                            {
+                                                this.state.isCollect ?
+                                                    <TouchableOpacity onPress={() => this.onpress3()} >
+                                                        <Image source={require('../img/collect.png')} style={{ width: pxToDp(34), height: pxToDp(34), marginRight: pxToDp(15), marginTop: -pxToDp(2) }} />
+                                                    </TouchableOpacity> :
+                                                    <TouchableOpacity onPress={() => this.onpress3()}>
+                                                        <Image source={require('../img/collectcolor.png')} style={{ width: pxToDp(38), height: pxToDp(40), marginRight: pxToDp(11), marginTop: -pxToDp(2) }} />
+                                                    </TouchableOpacity>
+                                            }
+                                        </View>
                                     </View>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: pxToDp(10) }}>
-                                        {/* 头像 */}
-                                        <Image source={require('../img/touxiang.jpg')} style={{ width: pxToDp(35), height: pxToDp(35), borderRadius: pxToDp(30), marginRight: pxToDp(15) }} />
-                                        {/* 用户名 */}
-                                        <Text style={{ fontSize: pxToDp(18), color: '#5B5B5B' }}>爱嗦粉的臭臭</Text>
-                                        {/* 问题描述 */}
-                                    </View>
-                                    <View>
-                                        <Text style={{ fontSize: pxToDp(20), color: 'gray' }}>本人今年21,17年6月份与丈夫离婚，孩子跟我，现在大了要上幼儿园，请问户口应该怎么转？</Text>
-                                    </View>
-                                    <View style={{ height: pxToDp(30), flexDirection: "row", justifyContent: 'flex-end', alignItems: 'center', position: 'absolute', bottom: 10, right: 20 }}>
-                                        <TouchableOpacity onPress={Actions.comment}>
-                                            <Image source={require('../img/comment.png')} style={{ marginRight: pxToDp(10), width: pxToDp(32), height: pxToDp(28), marginRight: pxToDp(45) }} />
-                                        </TouchableOpacity>
-                                        {
-                                            this.state.isCollect ?
-                                                <TouchableOpacity onPress={() => this.onpress3()} >
-                                                    <Image source={require('../img/collect.png')} style={{ width: pxToDp(34), height: pxToDp(34), marginRight: pxToDp(15), marginTop: -pxToDp(2) }} />
-                                                </TouchableOpacity> :
-                                                <TouchableOpacity onPress={() => this.onpress3()}>
-                                                    <Image source={require('../img/collectcolor.png')} style={{ width: pxToDp(38), height: pxToDp(40), marginRight: pxToDp(11), marginTop: -pxToDp(2) }} />
-                                                </TouchableOpacity>
-                                        }
-                                    </View>
-                                </View>
+                                </TouchableOpacity>
                                 <View style={{ width: width - pxToDp(30), height: pxToDp(300), backgroundColor: 'white', borderRadius: pxToDp(15), marginBottom: pxToDp(20), padding: pxToDp(15) }}>
                                     <View>
                                         {/* 标题 */}
