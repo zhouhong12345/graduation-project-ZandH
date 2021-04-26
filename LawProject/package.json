@@ -21,7 +21,10 @@
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-action-button": "^2.8.5",
+<<<<<<< HEAD
     "react-native-gifted-chat": "^0.16.3",
+=======
+>>>>>>> 57796c6186ba1b4c67867e627de10ad7dfc7b5fb
     "react-native-image-picker": "2.3.1",
     "react-native-modal-dropdown": "^1.0.0",
     "react-native-router-flux": "4.0.6",
@@ -30,6 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/runtime": "^7.12.18",
+    "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.20.0",

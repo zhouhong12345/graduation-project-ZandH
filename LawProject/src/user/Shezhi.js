@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { View,Text,Dimensions ,TextInput, TouchableOpacity,ImageBackground,Image, StyleSheet,} from 'react-native'    
-import Icon from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 
@@ -105,38 +104,34 @@ export default class Shezhi extends Component {
                         >{this.state.wsex}</TextInput>
                     </View>
                     <View style={styles.listcontent}>
-                        <Text style={{fontSize:18}}>微信</Text>
+                        <Text style={{fontSize:18}}>邮箱</Text>
                         <TextInput 
-                            placeholder="请输入微信号" 
+                            placeholder="请输入邮箱地址" 
                             placeholderTextColor='gray' 
                             style={styles.inputconent}
                             onChangeText={(text) => {this.setState({txtValue3:text})}} 
                         >{this.state.weixinnumber}</TextInput>
                     </View>
                     <View style={styles.listcontent}>
-                        <Text style={{fontSize:18}}>年级</Text>
-                        <TextInput 
-                            placeholder="请输入年级" 
-                            placeholderTextColor='gray' 
-                            style={styles.inputconent}
-                            onChangeText={(text) => {this.setState({txtValue4:text})}} 
-                        >{this.state.wclass}</TextInput>
+                        <TouchableOpacity
+                            style={styles.mima}
+                            onPress={()=>Actions.code()}
+                        ><Text style={styles.mimaa}>更改密码</Text></TouchableOpacity>
                     </View>
-                    <View style={styles.listcontent}>
-                        <Text style={{fontSize:18}}>学校</Text>
-                        <TextInput 
-                            placeholder="请输入学校" 
-                            placeholderTextColor='gray' 
-                            style={styles.inputconent}
-                            onChangeText={(text) => {this.setState({txtValue5:text})}} 
-                        >{this.state.wschool}</TextInput>
-                    </View>
+                  
                 </View>
             </View>    
         )
     }
 }
 const styles = StyleSheet.create({
+    mima:{
+        marginLeft:380*s
+    },
+    mimaa:{
+        fontSize:25,
+        color:'#CE0000',
+    },
     listcontent:{
         flexDirection:'row',
         height:100*s,

@@ -36,6 +36,19 @@ import Home from './src/home/Home';
 import Consult from './src/Consult/Consult'
 import User from './src/user/User';
 import Lawyer from './src/layer/Lawyer';
+import Msg from './src/user/Msg';
+import More from './src/layer/More';
+import Shezhi from './src/user/Shezhi';
+import Ques from './src/user/Ques';
+import Mylayor from './src/user/Mylayor';
+import Star from './src/user/Star';
+import Money from './src/user/Money';
+import Infor from './src/user/Infor';
+import Fankui from './src/user/Fankui';
+import Jingdian from './src/layer/Jingdian';
+import Dialog from './src/layer/Dialog';
+import Mima from './src/user/Mima';
+import Dialogg from './src/user/Dialogg';
 console.disableYellowBox = true;
 
 const App = () => {
@@ -186,8 +199,51 @@ const App = () => {
 												size={26}
 											/>
 										}
+<<<<<<< HEAD
 										title="我的"
 									>
+=======
+									></Scene>
+									<Scene key='more' title='律师信息' component={More}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='律师信息' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='seemore' title='经典案例' component={Jingdian}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='经典案例' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='dialog' title='duihua' component={Dialog}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='对话' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+>>>>>>> 57796c6186ba1b4c67867e627de10ad7dfc7b5fb
 
 										<Scene key='stdmine' title='个人中心' component={User}
 											// navigationBarStyle={{ backgroundColor: '#CE0000' }}
@@ -202,7 +258,158 @@ const App = () => {
 												<View></View>
 											}
 										/>
+<<<<<<< HEAD
 									</Scene>
+=======
+									}
+									title="我的"
+								>
+
+									<Scene key='stdmine' title='个人中心' component={User}
+										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='个人中心' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											// name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										//titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									/>
+									<Scene key='msg' title='个人信息' component={Msg}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='个人信息' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='shezhi' title='设置' component={Shezhi}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='设置' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='code' title='mima' component={Mima}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='更改密码' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='ques' title='问题' component={Ques}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='提出的问题' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='mylayor' title='律师' component={Mylayor}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='咨询律师' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='dialogg' title='duihua' component={Dialogg}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='律师对话' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='star' title='收藏' component={Star}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='我的收藏' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='money' title='钱包' component={Money}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='我的钱包' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='infor' title='tongzhi' component={Infor}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='消息通知' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+									<Scene key='fankui' title='反馈' component={Fankui}
+										navigationBarStyle={{ backgroundColor: '#CE0000' }}
+										navBar={() => <NavBar name='用户反馈' />}
+										renderLeftButton={
+											<View style={{ marginLeft: 15 * s }}><Icons
+											name="left" color="white" onPress={Actions.pop} 
+											/></View>
+										}
+										titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+										renderRightButton={
+											<View></View>
+										}
+									></Scene>
+								</Scene>
+>>>>>>> 57796c6186ba1b4c67867e627de10ad7dfc7b5fb
 							</Tabs>
 						</Scene>
 					</Lightbox>

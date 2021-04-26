@@ -6006,6 +6006,13 @@ react-lifecycles-compat@^3, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
 
+react-native-action-button@^2.8.5:
+  version "2.8.5"
+  resolved "https://registry.npm.taobao.org/react-native-action-button/download/react-native-action-button-2.8.5.tgz#4152a50323a8a6b3468e6f161f9a9071f2f0739a"
+  integrity sha1-QVKlAyOoprNGjm8WH5qQcfLwc5o=
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-collapsible@^1.4.0:
   version "1.5.3"
   resolved "https://registry.npm.taobao.org/react-native-collapsible/download/react-native-collapsible-1.5.3.tgz#d6bc7274ae8f40f7688cca23ededa263e6c81c63"
@@ -6036,6 +6043,13 @@ react-native-image-picker@2.3.1:
   version "2.3.1"
   resolved "https://registry.npm.taobao.org/react-native-image-picker/download/react-native-image-picker-2.3.1.tgz#1977b65e07793d2c0b2d1976fb675c5f75ad7f11"
   integrity sha1-GXe2Xgd5PSwLLRl2+2dcX3WtfxE=
+
+react-native-modal-dropdown@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/react-native-modal-dropdown/download/react-native-modal-dropdown-1.0.0.tgz#3985950c025c6d83c8c15968ab33e4e49e5bf634"
+  integrity sha1-OYWVDAJcbYPIwVloqzPk5J5b9jQ=
+  dependencies:
+    prop-types "^15.6.0"
 
 react-native-modal-popover@^0.0.12:
   version "0.0.12"

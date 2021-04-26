@@ -49,20 +49,19 @@ export default class Lawyer extends Component {
                                         <Image source={require('../../images/0.png')} style={styles.law}/>   
                                     {/* <Image  source={{uri:'http://148.70.183.184:8000/images/'+item.teatouxiang}} style={styles.tea}></Image>    */}
                                     <View style={styles.right}>
-                                        <Text style={styles.tch}>姓名：{item.wusername}</Text>
-                                        <Text style={styles.tch}>性别：{item.wsex}</Text>
-                                        <Text style={styles.tch}>年龄：{item.wage}</Text>
-                                        <Text style={styles.tch}>毕业院校：{item.biyexuexiao}</Text>
-                                        <Text style={styles.tch}>目前就业单位：{item.zhiwei}</Text>
+                                        <Text style={styles.tch}>姓名：李律师{item.wusername}</Text>
+                                        <Text style={styles.tch}>性别：男{item.wsex}</Text>
+                                        <Text style={styles.tch}>年龄：32{item.wage}</Text>
+                                        <Text style={styles.tch}>毕业院校：XXXXXX{item.biyexuexiao}</Text>
+                                        <Text style={styles.tch}>就业单位：恒源律师事务所{item.zhiwei}</Text>
                                         <View style={styles.slct}>
                                         <Button
-                                            title='咨询该律师'
+                                            title='了解更多'
                                             color='#CE0000'
-                                            onPress={()=>this.select()}
+                                            onPress={()=>Actions.more()}
                                         />
                                         </View>
                                     </View>
-
                                     
                                 </View>
                             ))
