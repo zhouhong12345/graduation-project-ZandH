@@ -96,7 +96,7 @@ const App = () => {
 								tabBarStyle={{ backgroundColor: '#e0e0e0' }}
 							>
 								{/* Home栏 */}
-								<Scene key='homePage'
+								<Scene key='normal'
 									// hideNavBar
 									title='案例'
 									icon={
@@ -187,24 +187,7 @@ const App = () => {
 												<View></View>
 											}
 										></Scene>
-
-									</Scene>
-									{/* 用户中心 */}
-									<Scene
-										key='userPage'
-										icon={
-											({ focused }) => <Icon
-												color={focused ? '#CE0000' : '#909090'}
-												name="person"
-												size={26}
-											/>
-										}
-<<<<<<< HEAD
-										title="我的"
-									>
-=======
-									></Scene>
-									<Scene key='more' title='律师信息' component={More}
+										<Scene key='more' title='律师信息' component={More}
 										navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										navBar={() => <NavBar name='律师信息' />}
 										renderLeftButton={
@@ -243,9 +226,23 @@ const App = () => {
 											<View></View>
 										}
 									></Scene>
->>>>>>> 57796c6186ba1b4c67867e627de10ad7dfc7b5fb
-
-										<Scene key='stdmine' title='个人中心' component={User}
+									</Scene>
+									{/* 用户中心 */}
+									<Scene
+										key='myPage'
+										icon={
+											({ focused }) => <Icon
+												color={focused ? '#CE0000' : '#707070'}
+												name="people"
+												size={26}
+											/>
+										}
+										title="个人中心"
+										// renderLeftButton={
+										// 	<View style={{ marginLeft: 15 * s }}><Icon name="left" onPress={Actions.pop} /></View>
+										// }
+									>
+									<Scene key='myuser' title='个人中心' component={User}
 											// navigationBarStyle={{ backgroundColor: '#CE0000' }}
 											navBar={() => <NavBar name='个人中心' />}
 											renderLeftButton={
@@ -257,14 +254,8 @@ const App = () => {
 											renderRightButton={
 												<View></View>
 											}
-										/>
-<<<<<<< HEAD
+									>
 									</Scene>
-=======
-									}
-									title="我的"
-								>
-
 									<Scene key='stdmine' title='个人中心' component={User}
 										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										navBar={() => <NavBar name='个人中心' />}
@@ -409,7 +400,6 @@ const App = () => {
 										}
 									></Scene>
 								</Scene>
->>>>>>> 57796c6186ba1b4c67867e627de10ad7dfc7b5fb
 							</Tabs>
 						</Scene>
 					</Lightbox>
@@ -457,7 +447,7 @@ const App = () => {
 										}
 										title="我的"
 									>
-										<Scene key='stdmine' title='个人中心' component={User} />
+										<Scene key='user' title='个人中心' component={User} />
 
 									</Scene>
 
