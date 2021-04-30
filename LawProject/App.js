@@ -96,7 +96,7 @@ const App = () => {
 								tabBarStyle={{ backgroundColor: '#e0e0e0' }}
 							>
 								{/* Home栏 */}
-								<Scene key='homePage'
+								<Scene key='normal'
 									// hideNavBar
 									title='案例'
 									icon={
@@ -178,6 +178,7 @@ const App = () => {
 										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										navBar={() => <NavBar name='律师' />}
 										renderLeftButton={
+<<<<<<< HEAD
 											<View style={{ marginLeft: 15 * s }}><Icons
 											// name="left" color="white" onPress={Actions.pop} 
 											/></View>
@@ -203,6 +204,25 @@ const App = () => {
 									title="我的"
 								>
 									<Scene key='more' title='律师信息' component={More}
+=======
+											<View style={{ marginLeft: 15 * s }}><Icon name="left" onPress={Actions.pop} /></View>
+										}
+									>
+										<Scene key='zixun' title='律师服务' component={Lawyer}
+											// navigationBarStyle={{ backgroundColor: '#CE0000' }}
+											navBar={() => <NavBar name='律师' />}
+											renderLeftButton={
+												<View style={{ marginLeft: 15 * s }}><Icons
+												// name="left" color="white" onPress={Actions.pop} 
+												/></View>
+											}
+											//titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+											renderRightButton={
+												<View></View>
+											}
+										></Scene>
+										<Scene key='more' title='律师信息' component={More}
+>>>>>>> 1fb64312837d94f4238cebc731d6c0a951006373
 										navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										navBar={() => <NavBar name='律师信息' />}
 										renderLeftButton={
@@ -241,6 +261,7 @@ const App = () => {
 											<View></View>
 										}
 									></Scene>
+<<<<<<< HEAD
 									<Scene key='stdmine' title='个人中心' component={User}
 										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										navBar={() => <NavBar name='个人中心' />}
@@ -257,6 +278,38 @@ const App = () => {
 										title="我的"
 									/>
 
+=======
+									</Scene>
+									{/* 用户中心 */}
+									<Scene
+										key='myPage'
+										icon={
+											({ focused }) => <Icon
+												color={focused ? '#CE0000' : '#707070'}
+												name="people"
+												size={26}
+											/>
+										}
+										title="个人中心"
+										// renderLeftButton={
+										// 	<View style={{ marginLeft: 15 * s }}><Icon name="left" onPress={Actions.pop} /></View>
+										// }
+									>
+									<Scene key='myuser' title='个人中心' component={User}
+											// navigationBarStyle={{ backgroundColor: '#CE0000' }}
+											navBar={() => <NavBar name='个人中心' />}
+											renderLeftButton={
+												<View style={{ marginLeft: 15 * s }}><Icons
+												// name="left" color="white" onPress={Actions.pop} 
+												/></View>
+											}
+											//titleStyle={{ flex: 1, textAlign: 'center', color: 'white' }}
+											renderRightButton={
+												<View></View>
+											}
+									>
+									</Scene>
+>>>>>>> 1fb64312837d94f4238cebc731d6c0a951006373
 									<Scene key='stdmine' title='个人中心' component={User}
 										// navigationBarStyle={{ backgroundColor: '#CE0000' }}
 										navBar={() => <NavBar name='个人中心' />}
@@ -433,6 +486,7 @@ const App = () => {
 										renderLeftButton={
 											<View></View>
 										}
+<<<<<<< HEAD
 										component={Home} />
 
 								</Scene>
@@ -449,6 +503,11 @@ const App = () => {
 									title="我的"
 								>
 									<Scene key='stdmine' title='个人中心' component={User} />
+=======
+										title="我的"
+									>
+										<Scene key='user' title='个人中心' component={User} />
+>>>>>>> 1fb64312837d94f4238cebc731d6c0a951006373
 
 								</Scene>
 
