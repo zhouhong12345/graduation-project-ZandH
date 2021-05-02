@@ -7,7 +7,7 @@ import ModalDropdown from 'react-native-modal-dropdown';//下拉列表
 import pxToDp from '../pxToDp';
 
 const { width, height } = Dimensions.get('window');
-const select = ['婚姻家庭', '财务纠纷', '交通事故', '人身损害', '合同纠纷', '医疗事故', '债权债务', '公司法务', '房产纠纷', '知识产权', '遗产继承'];
+const select2 = ['婚姻家庭', '财务纠纷', '交通事故', '人身损害', '合同纠纷', '医疗事故', '债权债务', '公司法务', '房产纠纷', '知识产权', '遗产继承'];
 
 export default class Talk extends Component {
     constructor() {
@@ -80,7 +80,7 @@ export default class Talk extends Component {
 
                         <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginLeft: pxToDp(370) }}>
                             <ModalDropdown
-                                options={select}
+                                options={select2}
                                 dropdownStyle={{ borderWidth: 2 }}
                                 textStyle={{ fontSize: 30 }}
                             >

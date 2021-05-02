@@ -34,13 +34,13 @@ export default class Login extends Component {
                 if (this.state.id === 'normal') {
                     console.log(JSON.stringify({mail:this.state.mail,password:this.state.pwd}));
                     // console.log(JSON.parse({mail:this.state.mail,password:this.state.pwd}));
-                    fetch('http://81.70.101.193:8888/user/ulogin', {
+                    fetch('http://81.70.101.193:8888/user/login', {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
                             'Content-Type': 'application/json'
                         },
-                        body:JSON.stringify({mail:this.state.mail,password:this.state.pwd})
+                        body:JSON.stringify({mail:this.state.mail,password:this.state.pwd,id:'normal'})
                     })
                         .then(res => { return res.json() })
                         .then(res => {
@@ -56,20 +56,20 @@ export default class Login extends Component {
                                     setTimeout(() => {
                                         console.log(this.state.token)
                                         AsyncStorage.setItem('token', JSON.stringify(this.state.token));
-                                        Actions.homePage()
+                                        Actions.normal()
                                     }, 1000);
                                 })
                             }
                         });
                 }
                 else if (this.state.id === 'lawyer') {
-                    fetch('http://81.70.101.193:8888/user/llogin', {
+                    fetch('http://81.70.101.193:8888/user/login', {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ mail: `${this.state.mail}`, password: `${this.state.pwd}` })
+                        body: JSON.stringify({ mail: this.state.mail, password: this.state.pwd,id:'lawyer' })
                     })
                         .then(res => { return res.json() })
                         .then(res => {
